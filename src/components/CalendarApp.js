@@ -4,6 +4,8 @@ import { DATE_FORMAT_KOR, getDaysInMonth, weekdaysShort } from '../utils/date';
 
 import CalendarNav from './CalendarNav';
 import CalendarBody from './CalendarBody';
+import GlobalStyle from '../styles/GlobalStyle';
+import PageTemplate from './PageTemplate';
 
 class CalendarApp extends Component {
   state = {
@@ -32,12 +34,15 @@ class CalendarApp extends Component {
 
     return (
       <div className="Calendar">
-        <CalendarNav
-          currentMonth={moment(curDate).format(DATE_FORMAT_KOR)}
-          onPrev={handlePrev}
-          onNext={handleNext}
-        />
-        <CalendarBody days={getDays()} weekdaysShort={weekdaysShort()} />
+        <GlobalStyle />
+        <PageTemplate>
+          <CalendarNav
+            currentMonth={moment(curDate).format(DATE_FORMAT_KOR)}
+            onPrev={handlePrev}
+            onNext={handleNext}
+          />
+          <CalendarBody days={getDays()} weekdaysShort={weekdaysShort()} />
+        </PageTemplate>
       </div>
     );
   }
