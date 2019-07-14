@@ -4,6 +4,7 @@ import eventsData from '../assets/data/Web.json';
 const DATE_SPLITTER = '-';
 const DATE_FORMAT = `YYYY${DATE_SPLITTER}MM`;
 const DATE_FORMAT_DD = `YYYY${DATE_SPLITTER}MM${DATE_SPLITTER}DD`;
+const DATE_FORMAT_KOR = `YYYY년 MM월`;
 const CALENDAR_END_DAY = 6; // "SATURDAY"
 
 const weekdaysShort = () => {
@@ -92,6 +93,7 @@ const getDaysInMonth = curDate => {
 export {
   DATE_FORMAT,
   DATE_FORMAT_DD,
+  DATE_FORMAT_KOR,
   weekdaysShort,
   getValidMonths,
   filterEvents,
