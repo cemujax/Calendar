@@ -24,7 +24,7 @@ const CalendarBody = ({ weekdaysShort, days }) => {
   };
 
   return (
-    <BodyContainer>
+    <BodyContainer data-testid="CalendarBody">
       {/* 요일 */}
       <DayContainer data-testid="weekdays">
         {(weekdaysShort || []).map((week, index) => (
