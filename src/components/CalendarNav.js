@@ -11,10 +11,28 @@ const CalendarNav = ({ currentMonth, onPrev, onNext }) => {
   );
 };
 
-const Nav = styled.div``;
+const Nav = styled.div`
+  margin-top: 1em;
+  display: flex;
+  justify-content: center;
+`;
 
-const NavButton = styled.button``;
+const NavButton = styled.button`
+  background: #fff;
+  padding: 0.25em 0.5em;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  outline: none;
+  cursor: pointer;
 
-const CurrentMonth = styled.h2``;
+  :hover {
+    background: #f7f9f9;
+  }
+`;
+
+const CurrentMonth = styled.h2`
+  margin: 0 0.5rem;
+  font-size: 1.4rem;
+`;
 
 export default CalendarNav;
