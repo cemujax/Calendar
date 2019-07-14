@@ -1,4 +1,9 @@
-import { weekdaysShort, getValidMonths, filterEvents } from '../date';
+import {
+  weekdaysShort,
+  getValidMonths,
+  filterEvents,
+  getDaysInMonth,
+} from '../date';
 import moment from 'moment';
 import eventsData from '../../assets/data/Web.json';
 
@@ -52,5 +57,45 @@ describe('filterEvents Test', () => {
 
   it('gets 2019-07 filterEvents', () => {
     expect(filterEvents(moment(testJuly), eventsData)).toEqual([]);
+  });
+});
+
+describe('getDaysInMonth 2019-05-05 Test', () => {
+  const testDate = '2019-05-05';
+  const days = getDaysInMonth(moment(testDate));
+  const daysLength = days.length;
+
+  it('gets 2019-05-05 days length', () => {
+    expect(daysLength).toBe(35);
+  });
+
+  it('gets first day info in 2019-05-05 days  ', () => {
+    expect(days[0]).toEqual({
+      idx: 0,
+      date: '2019-04-28',
+      shortDate: 28,
+      isToday: false,
+      events: [],
+    });
+  });
+
+  it('gets testDate day info in 2019-05-05 days  ', () => {
+    expect(days[7]).toEqual({
+      idx: 7,
+      date: testDate,
+      shortDate: 5,
+      isToday: false,
+      events: ['어린이날', '친구와 약속'],
+    });
+  });
+
+  it('gets last day info in 2019-05-05 days  ', () => {
+    expect(days[daysLength - 1]).toEqual({
+      idx: 34,
+      date: '2019-06-01',
+      shortDate: 1,
+      isToday: false,
+      events: [],
+    });
   });
 });
