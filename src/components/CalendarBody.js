@@ -43,8 +43,19 @@ const BodyContainer = styled.div`
   margin-top: 1rem;
 `;
 
-const DayContainer = styled.div``;
+const DayContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
 
-const DayName = styled.div``;
+const DayName = styled.div`
+  flex: 1;
+  border: 1px solid #ccc;
+  padding: 3px;
+  background: #bbb;
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+`;
 
 export default CalendarBody;
